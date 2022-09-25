@@ -11,6 +11,12 @@ export const starWarsApi = createApi({
         method: "GET",
       }),
     }),
+    getCharacter: builder.query({
+      query: (id) => ({
+        url: `people/${id}`,
+        method: "GET",
+      }),
+    }),
   }),
 });
-export const { useGetAllPeopleQuery } = starWarsApi;
+export const { useGetAllPeopleQuery, useGetCharacterQuery } = starWarsApi;

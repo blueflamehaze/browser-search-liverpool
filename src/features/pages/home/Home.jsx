@@ -1,7 +1,8 @@
 import React from "react";
+import ProductCard from "../../components/ProductCard";
+import { Link } from "react-router-dom";
 import { useGetAllPeopleQuery } from "../../services/api";
 import { Grid } from "@mui/material";
-import ProductCard from "../../components/ProductCard";
 import "./Home.css";
 
 function Home() {
@@ -26,7 +27,9 @@ function Home() {
                     className="card__m"
                     key={index}
                   >
-                    <ProductCard productInfo={productInfo} />
+                    <Link to={`/products/${index + 1}`} className="link">
+                      <ProductCard productInfo={productInfo} />
+                    </Link>
                   </Grid>
                 </>
               );

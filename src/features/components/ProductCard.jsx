@@ -4,7 +4,7 @@ import noImage from "../../assets/noImage.jpg";
 import "./ProductCard.css";
 import "../../App.css";
 
-function ProductCard({ productInfo: { image, name, gender, height } }) {
+function ProductCard({ productInfo: { image, name, gender, height, url } }) {
   return (
     <Card>
       <CardContent>

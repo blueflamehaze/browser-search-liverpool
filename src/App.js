@@ -7,6 +7,7 @@ import Registro from "./features/pages/sign-up/SignUp";
 import Login from "./features/pages/login/Login";
 import Header from "./common/layout/Header";
 import Home from "./features/pages/home/Home";
+import ProductDetails from "./features/pages/product-details/ProductDetails";
 
 function App() {
   const user = useSelector(selectUser);
@@ -29,7 +30,12 @@ function App() {
             )
           }
         ></Route>
-        <Route path="/home" element={user ? <Home /> : <Login />}></Route>
+        <Route path="/products" element={user ? <Home /> : <Login />}></Route>
+        <Route
+          path="/products/:id"
+          element={user ? <ProductDetails /> : <Login />}
+        ></Route>
+        <Route path="*" element={<h3>Error 404</h3>}></Route>
       </Routes>
     </div>
   );
