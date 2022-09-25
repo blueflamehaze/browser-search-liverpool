@@ -1,5 +1,5 @@
 import React from "react";
-import ProductCard from "../../components/ProductCard";
+import ProductCard from "../../components/product-card/ProductCard";
 import { Link } from "react-router-dom";
 import { useGetAllPeopleQuery } from "../../services/api";
 import { Grid } from "@mui/material";

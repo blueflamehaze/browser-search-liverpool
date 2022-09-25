@@ -1,8 +1,8 @@
 import React from "react";
 import { Card, CardContent } from "@mui/material";
-import noImage from "../../assets/noImage.jpg";
+import noImage from "../../../assets/noImage.jpg";
 import "./ProductCard.css";
-import "../../App.css";
+import "../../../App.css";
 
 function ProductCard({ productInfo: { image, name, gender, height, url } }) {
   return (

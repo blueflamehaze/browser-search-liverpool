@@ -41,6 +41,17 @@ function Header(props) {
       <List>
         <div>
           {user ? (
+            <Button color="inherit" component={Link} to="/products">
+              Home
+            </Button>
+          ) : (
+            <Button color="inherit" component={Link} to="/">
+              Iniciar sesión
+            </Button>
+          )}
+        </div>
+        <div>
+          {user ? (
             <p>{String(user.name).split("@")[0]}</p>
           ) : (
             <Button color="inherit" component={Link} to="/">
@@ -90,6 +101,15 @@ function Header(props) {
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {user ? (
               <span>{String(user.name).split("@")[0]}</span>
+            ) : (
+              <Button color="inherit" component={Link} to="/">
+                Iniciar sesión
+              </Button>
+            )}
+            {user ? (
+              <Button color="inherit" component={Link} to="/products">
+                Home
+              </Button>
             ) : (
               <Button color="inherit" component={Link} to="/">
                 Iniciar sesión
