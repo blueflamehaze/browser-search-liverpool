@@ -6,7 +6,7 @@ import { Routes, Route } from "react-router-dom";
 import Registro from "./features/pages/sign-up/SignUp";
 import Login from "./features/pages/login/Login";
 import Header from "./common/layout/Header";
-import Home from "./features/pages/Home/Home";
+import Home from "./features/pages/home/Home";
 
 function App() {
   const user = useSelector(selectUser);

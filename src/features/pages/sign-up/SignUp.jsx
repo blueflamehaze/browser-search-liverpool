@@ -101,11 +101,11 @@ const Registro = ({ isRegistered }) => {
                   sx={{ m: 1, width: "70%" }}
                   variant="standard"
                 >
-                  <InputLabel htmlFor="standard-adornment-password">
+                  <InputLabel htmlFor="standard-adornment-email">
                     Email
                   </InputLabel>
                   <Input
-                    id="standard-adornment-password"
+                    id="standard-adornment-email"
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
