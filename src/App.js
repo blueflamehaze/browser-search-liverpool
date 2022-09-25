@@ -11,7 +11,15 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <Login />
+        {user ? (
+          <>
+            <h2>Usuario logeado</h2>
+          </>
+        ) : (
+          <>
+            <Login />
+          </>
+        )}
       </header>
     </div>
   );
