@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import "./App.css";
 import { useSelector } from "react-redux";
-import { selectUser } from "./features/userSlice";
+import { selectUser } from "./features/store/userSlice";
 import { Routes, Route } from "react-router-dom";
-import Registro from "./features/pages/registro/Registro";
-import Login from "./features/pages/Login/Login";
+import Registro from "./features/pages/sign-up/SignUp";
+import Login from "./features/pages/login/Login";
 import Header from "./common/layout/Header";
 import Home from "./features/pages/Home/Home";
 

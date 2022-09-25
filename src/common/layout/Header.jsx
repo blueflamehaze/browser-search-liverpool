@@ -14,7 +14,7 @@ import "./Header.css";
 import "../../App.css";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { selectUser } from "../../features/userSlice";
+import { selectUser } from "../../features/store/userSlice";
 import { auth } from "../../firebase";
 
 const drawerWidth = 240;

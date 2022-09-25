@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { auth } from "../../../firebase";
 import { Link, useNavigate } from "react-router-dom";
-import { login, logout } from "../../userSlice";
+import { login, logout } from "../../store/userSlice";
 import "./Login.css";
+import "../../../App.css";
 import {
   Grid,
   Card,
@@ -16,7 +17,7 @@ import {
   IconButton,
   Button,
 } from "@mui/material";
-import LoginIcon from "@mui/icons-material/Login";
+import LockOpenIcon from "@mui/icons-material/LockOpen";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
@@ -77,7 +78,7 @@ function Login() {
         <Grid item xs={10} md={8} lg={6}>
           <Card sx={{ backgroundColor: "#f6f6f6", paddingTop: 5 }}>
             <CardContent>
-              <LoginIcon sx={{ fontSize: 70, color: "#e10098" }} />
+              <LockOpenIcon className="form__icon" />
               <h2>Login</h2>
               <Box component="form" noValidate autoComplete="off">
                 <FormControl

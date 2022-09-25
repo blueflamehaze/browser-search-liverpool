@@ -14,3 +14,7 @@
 .links:hover {
   color: #a40973 !important;
 }
+.form__icon {
+  font-size: 70px !important;
+  color: #e10098 !important;
+}
