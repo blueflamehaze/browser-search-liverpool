@@ -4,3 +4,13 @@
 .bg_color {
   background-color: #e10098 !important;
 }
+.submit_button {
+  background-color: #e10098 !important;
+  margin-top: 1rem !important;
+}
+.links {
+  color: #e10098 !important;
+}
+.links:hover {
+  color: #a40973 !important;
+}

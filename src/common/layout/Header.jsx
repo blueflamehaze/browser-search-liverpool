@@ -37,7 +37,7 @@ function Header(props) {
       <List>
         <p>
           <Button color="inherit" component={Link} to="/">
-            Login
+            Iniciar sesión
           </Button>
         </p>
         <p>
@@ -75,7 +75,7 @@ function Header(props) {
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             <Button color="inherit" component={Link} to="/">
-              Login
+              Iniciar sesión
             </Button>
             <Button color="inherit" component={Link} to="/register">
               Registrase

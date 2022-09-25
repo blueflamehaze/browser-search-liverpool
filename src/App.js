@@ -6,6 +6,7 @@ import { Routes, Route } from "react-router-dom";
 import Registro from "./features/pages/registro/Registro";
 import Login from "./features/pages/Login/Login";
 import Header from "./common/layout/Header";
+import Home from "./features/pages/Home/Home";
 
 function App() {
   const user = useSelector(selectUser);
@@ -28,6 +29,7 @@ function App() {
             )
           }
         ></Route>
+        <Route path="/home" element={user ? <Home /> : <Login />}></Route>
       </Routes>
     </div>
   );

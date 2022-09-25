@@ -10,7 +10,7 @@ const Registro = ({ isRegistered }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    isRegistered ? handleLogin() : handleRegister();
+    handleRegister();
   };
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
@@ -30,17 +30,6 @@ const Registro = ({ isRegistered }) => {
       }
     });
   }, []);
-
-  const handleLogin = () => {
-    if (email && password) {
-      auth
-        .signInWithEmailAndPassword(email, password)
-        .then((data) => alert("Logged in successfully"))
-        .catch((error) => alert(error));
-    } else {
-      alert("Campos vacíos");
-    }
-  };
 
   const handleRegister = () => {
     if (email && password) {

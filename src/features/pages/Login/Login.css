@@ -2,3 +2,11 @@
   display: flex;
   justify-content: center;
 }
+.login__icon {
+  font-size: 70px;
+  color: "#e10098";
+}
+.account__text {
+  font-size: 1.2rem;
+  color: #626262;
+}
