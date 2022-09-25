@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import { useSelector } from "react-redux";
 import { selectUser } from "./features/userSlice";
-import Registro from "./features/pages/registro/Registro";
 import { Routes, Route } from "react-router-dom";
+import Registro from "./features/pages/registro/Registro";
+import Login from "./features/pages/Login/Login";
 
 function App() {
   const user = useSelector(selectUser);
@@ -12,10 +12,8 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
       <Routes>
+        <Route path="/" element={<Login />}></Route>
         <Route
           path="register"
           element={
