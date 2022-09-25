@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -6,9 +6,6 @@ import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
 import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
@@ -16,16 +13,23 @@ import Button from "@mui/material/Button";
 import "./Header.css";
 import "../../App.css";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { selectUser } from "../../features/userSlice";
+import { auth } from "../../firebase";
 
 const drawerWidth = 240;
-const navItems = ["Registrarse", "Iniciar sesión"];
 
 function Header(props) {
   const { window } = props;
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const user = useSelector(selectUser);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
+  };
+
+  const handleLogout = () => {
+    auth.signOut();
   };
 
   const drawer = (
@@ -35,16 +39,26 @@ function Header(props) {
       </Typography>
       <Divider />
       <List>
-        <p>
-          <Button color="inherit" component={Link} to="/">
-            Iniciar sesión
-          </Button>
-        </p>
-        <p>
-          <Button color="inherit" component={Link} to="/register">
-            Registrase
-          </Button>
-        </p>
+        <div>
+          {user ? (
+            <p>{String(user.name).split("@")[0]}</p>
+          ) : (
+            <Button color="inherit" component={Link} to="/">
+              Iniciar sesión
+            </Button>
+          )}
+        </div>
+        <div>
+          {user ? (
+            <Button color="inherit" onClick={handleLogout}>
+              Cerrar sesión
+            </Button>
+          ) : (
+            <Button color="inherit" component={Link} to="/register">
+              Registrase
+            </Button>
+          )}
+        </div>
       </List>
     </Box>
   );
@@ -74,12 +88,22 @@ function Header(props) {
             LIVERPOOL
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            <Button color="inherit" component={Link} to="/">
-              Iniciar sesión
-            </Button>
-            <Button color="inherit" component={Link} to="/register">
-              Registrase
-            </Button>
+            {user ? (
+              <span>{String(user.name).split("@")[0]}</span>
+            ) : (
+              <Button color="inherit" component={Link} to="/">
+                Iniciar sesión
+              </Button>
+            )}
+            {user ? (
+              <Button color="inherit" onClick={handleLogout}>
+                Cerrar sesión
+              </Button>
+            ) : (
+              <Button color="inherit" component={Link} to="/register">
+                Registrase
+              </Button>
+            )}
           </Box>
         </Toolbar>
       </AppBar>
