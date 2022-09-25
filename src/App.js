@@ -5,6 +5,7 @@ import { selectUser } from "./features/userSlice";
 import { Routes, Route } from "react-router-dom";
 import Registro from "./features/pages/registro/Registro";
 import Login from "./features/pages/Login/Login";
+import Header from "./common/layout/Header";
 
 function App() {
   const user = useSelector(selectUser);
@@ -12,10 +13,11 @@ function App() {
 
   return (
     <div className="App">
+      <Header />
       <Routes>
         <Route path="/" element={<Login />}></Route>
         <Route
-          path="register"
+          path="/register"
           element={
             user ? (
               <>
