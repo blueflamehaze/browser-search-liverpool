@@ -39,7 +39,7 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     handleLogin();
-    navigate("/home");
+    navigate("/products");
   };
 
   const handleLogin = () => {

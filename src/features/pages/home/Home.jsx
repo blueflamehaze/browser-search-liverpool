@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useGetAllPeopleQuery } from "../../services/api";
 import { Grid } from "@mui/material";
 import "./Home.css";
+import Loader from "../../../common/layout/loader/Loader";
 
 function Home() {
   const { isLoading, data, isError } = useGetAllPeopleQuery();
@@ -11,7 +12,7 @@ function Home() {
   return (
     <>
       {isLoading ? (
-        <div>Loading...</div>
+        <Loader></Loader>
       ) : (
         <>
           <h1>Productos</h1>
