@@ -20,9 +20,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 4. Feel free to make any change you consider appropriate.
 
-## Available Scripts in the project
+## App deployed
 
-**Note:** Please note that at the moment the only mode that is implemented is development
+You can see the app deployed on
+
+[APP LINK](https://calm-licorice-94af7a.netlify.app/)
+
+## Available Scripts in the project
 
 In the project directory, you can run:
 

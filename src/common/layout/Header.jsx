@@ -58,7 +58,7 @@ function Header(props) {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        LIVERPOOL
+        LIVERPOOL1
       </Typography>
       <Divider />
       <List>
@@ -68,8 +68,8 @@ function Header(props) {
               Home
             </Button>
           ) : (
-            <Button color="inherit" component={Link} to="/">
-              Iniciar sesión
+            <Button color="inherit" component={Link} to="/products">
+              Home
             </Button>
           )}
         </div>
