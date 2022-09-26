@@ -138,7 +138,7 @@ function Header(props) {
             {user && (
               <TextField
                 id="outlined-search"
-                label="Search field"
+                label="Buscar"
                 type="search"
                 variant="filled"
                 onKeyDown={handleKeyDown}
@@ -146,7 +146,9 @@ function Header(props) {
             )}
             <Box sx={{ display: { xs: "none", sm: "block" } }}>
               {user ? (
-                <span>{String(user.name).split("@")[0]}</span>
+                <span className="span__m">
+                  {String(user.name).split("@")[0]}
+                </span>
               ) : (
                 <Button color="inherit" component={Link} to="/products">
                   Home

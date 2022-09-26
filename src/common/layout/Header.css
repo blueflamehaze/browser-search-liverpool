@@ -2,6 +2,9 @@
   text-align: left;
 }
 .search {
-  margin: auto 15px !important;
+  margin-right: 15px !important;
   color: #fff !important;
+}
+.span__m {
+  margin-left: 15px;
 }
