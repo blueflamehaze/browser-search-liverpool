@@ -14,6 +14,8 @@ import {
   InputAdornment,
   IconButton,
   Button,
+  Alert,
+  Snackbar,
 } from "@mui/material";
 import "./SignUp.css";
 import "../../../App.css";
@@ -27,7 +29,9 @@ const Registro = ({ isRegistered }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
+  const [openWarning, setOpenWarning] = useState(false);
+  const [openSuccess, setOpenSuccess] = useState(false);
+  const [openError, setOpenError] = useState(false);
 
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
@@ -40,7 +44,18 @@ const Registro = ({ isRegistered }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     handleRegister();
-    navigate("/home");
+  };
+
+  const handleWarningClose = () => {
+    setOpenWarning(false);
+  };
+
+  const handleSuccessClose = () => {
+    setOpenSuccess(false);
+  };
+
+  const handleErrorClose = () => {
+    setOpenError(false);
   };
 
   useEffect(() => {
@@ -63,18 +78,65 @@ const Registro = ({ isRegistered }) => {
   }, []);
 
   const handleRegister = () => {
-    if (name && email && password) {
+    if (email && password) {
       auth
         .createUserWithEmailAndPassword(email, password)
-        .then((data) => alert("Registered successfully"))
-        .catch((error) => alert(error));
+        .then((data) => {
+          setOpenSuccess(true);
+          navigate("/products");
+        })
+        .catch((error) => {
+          setEmail("");
+          setPassword("");
+          setOpenError(true);
+        });
     } else {
-      alert("Campos vacíos");
+      setOpenWarning(true);
     }
   };
 
   return (
     <>
+      <Snackbar
+        open={openError}
+        autoHideDuration={6000}
+        onClose={handleErrorClose}
+      >
+        <Alert
+          severity="error"
+          sx={{ width: "100%" }}
+          onClose={handleErrorClose}
+        >
+          Ha ocurrido un error, por favor verifica que no hayas registrado el
+          correo previamente.
+        </Alert>
+      </Snackbar>
+      <Snackbar
+        open={openSuccess}
+        autoHideDuration={6000}
+        onClose={handleSuccessClose}
+      >
+        <Alert
+          severity="success"
+          sx={{ width: "100%" }}
+          onClose={handleSuccessClose}
+        >
+          ¡Te has registrado correctamente!
+        </Alert>
+      </Snackbar>
+      <Snackbar
+        open={openWarning}
+        autoHideDuration={6000}
+        onClose={handleWarningClose}
+      >
+        <Alert
+          severity="warning"
+          sx={{ width: "100%" }}
+          onClose={handleWarningClose}
+        >
+          Ambos campos son obligatorios, por favor completarlos
+        </Alert>
+      </Snackbar>
       <Grid container className="register__container">
         <Grid item xs={10} md={8} lg={6}>
           <Card className="card__bg">
@@ -83,21 +145,7 @@ const Registro = ({ isRegistered }) => {
               <h2>Registro</h2>
               <Box component="form" noValidate autoComplete="off">
                 <FormControl
-                  fullWidth
-                  sx={{ m: 1, width: "70%" }}
-                  variant="standard"
-                >
-                  <InputLabel htmlFor="standard-adornment-password">
-                    Nombre
-                  </InputLabel>
-                  <Input
-                    type="text"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                  />
-                </FormControl>
-                <FormControl
-                  fullWidth
+                  required
                   sx={{ m: 1, width: "70%" }}
                   variant="standard"
                 >
@@ -112,7 +160,7 @@ const Registro = ({ isRegistered }) => {
                   />
                 </FormControl>
                 <FormControl
-                  fullWidth
+                  required
                   sx={{ m: 1, width: "70%" }}
                   variant="standard"
                 >

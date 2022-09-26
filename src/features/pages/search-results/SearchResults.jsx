@@ -5,6 +5,7 @@ import { Grid } from "@mui/material";
 import ProductCard from "../../components/product-card/ProductCard";
 import "./SearchResults.css";
 import Loader from "../../../common/layout/loader/Loader";
+import NoResults from "../../components/no-results/NoResults";
 
 function SearchResults() {
   const params = useParams();
@@ -38,7 +39,7 @@ function SearchResults() {
           </Grid>
         </>
       ) : (
-        <div>No hay resultados</div>
+        <NoResults />
       )}
     </>
   );
