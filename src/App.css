@@ -24,3 +24,11 @@
 .container__m {
   padding: 1rem 2rem !important;
 }
+.button__bg {
+  background-color: #e10098 !important;
+  color: #fff !important;
+  padding: 0.5rem 2rem !important;
+}
+.button__bg:hover {
+  background-color: #aa0375 !important;
+}
