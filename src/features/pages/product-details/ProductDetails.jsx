@@ -8,6 +8,13 @@ import Loader from "../../../common/layout/loader/Loader";
 
 function ProductDetails() {
   const params = useParams();
+  /**
+   * Get character by ID API /src/features/services/api.js
+   * data {Object} - All characters in an array data.results
+   * isLoading {Boolean} - When true, indicates that the query is currently loading for the first time, and has no data yet.
+   * isError {Boolean} - When true, indicates that the query is in an error state.
+   * @param {string} - character id from query params
+   */
   const { isLoading, data, isError } = useGetCharacterQuery(params.id);
   return (
     <>
