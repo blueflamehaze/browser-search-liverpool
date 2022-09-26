@@ -9,6 +9,7 @@ import Header from "./common/layout/Header";
 import Home from "./features/pages/home/Home";
 import SearchResults from "./features/pages/search-results/SearchResults";
 import ProductDetails from "./features/pages/product-details/ProductDetails";
+import Page404 from "./features/components/404/Page404";
 
 function App() {
   const user = useSelector(selectUser);
@@ -40,7 +41,7 @@ function App() {
           path="/search/:searchParams"
           element={user ? <SearchResults /> : <Login />}
         ></Route>
-        <Route path="*" element={<h3>Error 404</h3>}></Route>
+        <Route path="*" element={user ? <Page404 /> : <Login />}></Route>
       </Routes>
     </div>
   );
