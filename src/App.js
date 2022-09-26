@@ -7,6 +7,7 @@ import Registro from "./features/pages/sign-up/SignUp";
 import Login from "./features/pages/login/Login";
 import Header from "./common/layout/Header";
 import Home from "./features/pages/home/Home";
+import SearchResults from "./features/pages/search-results/SearchResults";
 import ProductDetails from "./features/pages/product-details/ProductDetails";
 
 function App() {
@@ -34,6 +35,10 @@ function App() {
         <Route
           path="/products/:id"
           element={user ? <ProductDetails /> : <Login />}
+        ></Route>
+        <Route
+          path="/search/:searchParams"
+          element={user ? <SearchResults /> : <Login />}
         ></Route>
         <Route path="*" element={<h3>Error 404</h3>}></Route>
       </Routes>

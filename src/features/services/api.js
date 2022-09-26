@@ -17,6 +17,16 @@ export const starWarsApi = createApi({
         method: "GET",
       }),
     }),
+    searchCharacter: builder.query({
+      query: (searchParams) => ({
+        url: `people/?search=${searchParams}`,
+        method: "GET",
+      }),
+    }),
   }),
 });
-export const { useGetAllPeopleQuery, useGetCharacterQuery } = starWarsApi;
+export const {
+  useGetAllPeopleQuery,
+  useGetCharacterQuery,
+  useSearchCharacterQuery,
+} = starWarsApi;

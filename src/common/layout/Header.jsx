@@ -1,21 +1,25 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Divider from "@mui/material/Divider";
-import Drawer from "@mui/material/Drawer";
-import IconButton from "@mui/material/IconButton";
-import List from "@mui/material/List";
+import {
+  AppBar,
+  Box,
+  Divider,
+  Drawer,
+  IconButton,
+  List,
+  Toolbar,
+  Typography,
+  Button,
+  TextField,
+} from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
 import "./Header.css";
 import "../../App.css";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectUser } from "../../features/store/userSlice";
 import { auth } from "../../firebase";
+import { useNavigate } from "react-router-dom";
 
 const drawerWidth = 240;
 
@@ -23,6 +27,7 @@ function Header(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = useState(false);
   const user = useSelector(selectUser);
+  const navigate = useNavigate();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -30,6 +35,16 @@ function Header(props) {
 
   const handleLogout = () => {
     auth.signOut();
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      if (e.target.value) {
+        navigate(`/search/${e.target.value}`);
+      } else {
+        alert("Campo vacío");
+      }
+    }
   };
 
   const drawer = (
@@ -96,8 +111,16 @@ function Header(props) {
             className="logo__left"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
           >
-            LIVERPOOL
+            LIVERPOOL2
           </Typography>
+          <TextField
+            id="outlined-search"
+            label="Search field"
+            type="search"
+            variant="filled"
+            className="search"
+            onKeyDown={handleKeyDown}
+          />
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {user ? (
               <span>{String(user.name).split("@")[0]}</span>
