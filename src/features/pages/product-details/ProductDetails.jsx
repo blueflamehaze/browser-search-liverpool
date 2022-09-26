@@ -4,6 +4,7 @@ import { useGetCharacterQuery } from "../../services/api";
 import { Grid } from "@mui/material";
 import ProductCardDetails from "../../components/product-card-details/ProductCardDetails";
 import "../../../App.css";
+import Loader from "../../../common/layout/loader/Loader";
 
 function ProductDetails() {
   const params = useParams();
@@ -11,7 +12,7 @@ function ProductDetails() {
   return (
     <>
       {isLoading ? (
-        <div>Loading..</div>
+        <Loader />
       ) : (
         <>
           <h1>Detalles del producto</h1>

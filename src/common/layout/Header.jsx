@@ -118,15 +118,14 @@ function Header(props) {
             label="Search field"
             type="search"
             variant="filled"
-            className="search"
             onKeyDown={handleKeyDown}
           />
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {user ? (
               <span>{String(user.name).split("@")[0]}</span>
             ) : (
-              <Button color="inherit" component={Link} to="/">
-                Iniciar sesión
+              <Button color="inherit" component={Link} to="/products">
+                Home
               </Button>
             )}
             {user ? (

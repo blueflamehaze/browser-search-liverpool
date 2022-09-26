@@ -4,6 +4,7 @@ import { useSearchCharacterQuery } from "../../services/api";
 import { Grid } from "@mui/material";
 import ProductCard from "../../components/product-card/ProductCard";
 import "./SearchResults.css";
+import Loader from "../../../common/layout/loader/Loader";
 
 function SearchResults() {
   const params = useParams();
@@ -13,7 +14,7 @@ function SearchResults() {
   return (
     <>
       {isLoading ? (
-        <div>Loading..</div>
+        <Loader />
       ) : data.count >= 1 ? (
         <>
           <h1>Resultados de la búsqueda</h1>
