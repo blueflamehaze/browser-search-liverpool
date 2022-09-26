@@ -5,17 +5,24 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Run local project
 
 1. Clone this repository in your computer.
+
    `https://github.com/blueflamehaze/browser-search-liverpool.git`
 
    **Note:** Make sure you have node and npm installed. If you don't know how to do it please check the next video [Install Node](https://www.youtube.com/watch?v=e_7hKWwppRs)
 
 2. Install node modules with the next command.
+
    `npm install`
 
 3. Run the next command to start the dev server
+
    `npm start`
 
+4. Feel free to make any change you consider appropriate.
+
 ## Available Scripts in the project
+
+**Note:** Please note that at the moment the only mode that is implemented is development
 
 In the project directory, you can run:
 

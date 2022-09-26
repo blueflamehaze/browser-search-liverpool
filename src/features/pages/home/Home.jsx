@@ -7,6 +7,12 @@ import "./Home.css";
 import Loader from "../../../common/layout/loader/Loader";
 
 function Home() {
+  /**
+   * Get all characters from API /src/features/services/api.js
+   * data {Object} - All characters in an array data.results
+   * isLoading {Boolean} - When true, indicates that the query is currently loading for the first time, and has no data yet.
+   * isError {Boolean} - When true, indicates that the query is in an error state.
+   */
   const { isLoading, data, isError } = useGetAllPeopleQuery();
 
   return (
