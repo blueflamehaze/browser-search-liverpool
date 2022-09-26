@@ -1,39 +1,34 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.bg_color {
+  background-color: #e10098 !important;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-float infinite 3s ease-in-out;
-  }
+.submit_button {
+  background-color: #e10098 !important;
+  margin-top: 1rem !important;
 }
-
-.App-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.color {
+  color: #e10098 !important;
 }
-
-.App-link {
-  color: rgb(112, 76, 182);
+.links {
+  color: #e10098 !important;
 }
-
-@keyframes App-logo-float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(10px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
+.links:hover {
+  color: #a40973 !important;
+}
+.form__icon {
+  font-size: 70px !important;
+  color: #e10098 !important;
+}
+.container__m {
+  padding: 1rem 2rem !important;
+}
+.button__bg {
+  background-color: #e10098 !important;
+  color: #fff !important;
+  padding: 0.5rem 2rem !important;
+}
+.button__bg:hover {
+  background-color: #aa0375 !important;
 }

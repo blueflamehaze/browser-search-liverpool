@@ -1,0 +1,17 @@
+.card__img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+.price {
+  font-size: 20px;
+  font-weight: 600;
+}
+.description {
+  font-size: 20px;
+}
+.title {
+  color: #ffffff !important;
+  font-size: 1.5em !important;
+  padding: auto 20px !important;
+}

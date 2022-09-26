@@ -1,0 +1,27 @@
+.details__title {
+  color: #e10098;
+  font-size: 30px !important;
+  padding-top: 10px;
+}
+.card__img {
+  width: 50%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  padding-top: 25px;
+}
+.details {
+  font-size: 20px;
+}
+.sp__title {
+  font-weight: 600;
+  color: rgb(18, 5, 5);
+}
+.price {
+  color: #e10098;
+  font-size: 25px !important;
+  padding-top: 20px;
+}
+.sp_border {
+  border: 2px solid #e10098;
+  padding: 0.5rem;
+}
